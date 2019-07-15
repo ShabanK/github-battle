@@ -38,7 +38,6 @@ class App extends React.Component {
       <React.Fragment>
         <One />
         <Two />
-        <Three />
       </React.Fragment>
     );
   }
