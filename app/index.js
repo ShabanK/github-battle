@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import Popuplar from "./components/popular";
 
 class One extends React.Component {
   render() {
@@ -31,16 +32,23 @@ class Three extends React.Component {
 }
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      mom: this.props.mom,
+      hasMom: this.props.hasMom
+    }
+  }
+  
   render() {
     //javascript land
 
     return (
-      <React.Fragment>
-        <One />
-        <Two />
-      </React.Fragment>
+      <div className="container">
+        <Popuplar yay={[1,2,3,4]} />
+      </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App mom="dead" hasMom={false} />, document.getElementById("app"));
